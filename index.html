@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #ff4d4d; /* Red Accent */
+            --bg: #0c0c12;
+            --card-bg: #161623;
+            --text: #ffffff;
+            --text-dim: #b0b0b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(12, 12, 18, 0.9);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        section { padding: 100px 10%; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+
+        .hero { text-align: center; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { color: var(--text-dim); font-size: 1.2rem; margin-bottom: 30px; }
+
+        .btn {
+            padding: 12px 35px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            transition: 0.4s;
+            box-shadow: 0 10px 20px rgba(255, 77, 77, 0.3);
+        }
+
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(255, 77, 77, 0.5); }
+
+        /* Skills/Experience Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.4s;
+            text-align: center;
+        }
+
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+
+        /* Projects */
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background: #252538;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        input:focus { border-color: var(--primary); }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-dim);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Animations */
+        [data-reveal] { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
+        .active { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MY PORTFOLIO</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1 data-reveal>Hi, I'm <span>Hassan Ali khan</span></h1>
+        <p data-reveal>Frontend Developer & UI/UX Enthusiast</p>
+        <div data-reveal><a href="#contact" class="btn">Hire Me</a></div>
+    </section>
+
+    <section id="about">
+        <h2 style="text-align: center; font-size: 2.5rem;" data-reveal>My Skills</h2>
+        <div class="grid">
+            <div class="card" data-reveal>
+                <i class="fab fa-html5"></i>
+                <h3>HTML & CSS</h3>
+                <p>Modern, responsive layouts with clean code.</p>
+            </div>
+            <div class="card" data-reveal>
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>Interactive features and logic-based design.</p>
+            </div>
+            <div class="card" data-reveal>
+                <i class="fas fa-code"></i>
+                <h3>Clean Code</h3>
+                <p>Optimized and scalable web architecture.</p>
+            </div>
+        </div>
+    </section>
+
+  <section id="projects">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 40px;" data-reveal>My Projects</h2>
+        <div class="grid">
+            
+            <div class="card" data-reveal>
+                <div class="project-img" style="background: url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400') center/cover;"></div>
+                <h3>HS Hoodies Shop</h3>
+                <p>Premium hoodies e-commerce landing page.</p>
+                <a href="https://eclectic-taffy-4a090e.netlify.app/" target="_blank" class="btn" style="padding: 8px 20px; font-size: 0.9rem; margin-top: 10px;">View Project</a>
+            </div>
+
+            <div class="card" data-reveal>
+                <div class="project-img" style="background: url('istockphoto-1428709516-612x612.jpg') center/cover;"></div>
+                <h3>Ecommerce website</h3>
+                <p>Minimalist Ecommerce Website for data tracking.</p>
+                <a href="https://curious-cocada-f51803.netlify.app/" target="_blank" class="btn" style="padding: 8px 20px; font-size: 0.9rem; margin-top: 10px;">View Project</a>
+            </div>
+
+            <div class="card" data-reveal>
+                <div class="project-img" style="background: url('istockphoto-1182907996-612x612.jpg') center/cover;"></div>
+                <h3>Photography Website</h3>
+                <p>Interactive personal portfolio with animations.</p>
+                <a href="https://bright-lamington-40feb8.netlify.app/" target="_blank" class="btn" style="padding: 8px 20px; font-size: 0.9rem; margin-top: 10px;">View Project</a>
+            </div>
+
+        </div>
+    </section>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 40px;" data-reveal>Get In Touch</h2>
+        <div class="contact-form" data-reveal>
+            <form id="my-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Personal Portfolio. Designed by Me.</p>
+    </footer>
+
+    <script>
+        // Scroll Reveal Animation
+        const reveal = () => {
+            const reveals = document.querySelectorAll('[data-reveal]');
+            reveals.forEach(el => {
+                let windowHeight = window.innerHeight;
+                let revealTop = el.getBoundingClientRect().top;
+                let revealPoint = 100;
+                if (revealTop < windowHeight - revealPoint) {
+                    el.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('load', reveal);
+
+        // Simple Form Alert
+        document.getElementById('my-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Shukriya! Aapka message bhej diya gaya hai.');
+        });
+    </script>
+</body>
+</html>
